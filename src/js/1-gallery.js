@@ -66,13 +66,6 @@ const images = [
 
 const gallery = document.querySelector('.gallery');
 
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
-const lightbox = new SimpleLightbox('.gallery a', {
-  /* options */
-});
-
 function createMarkup(array) {
   return array
     .map(
@@ -91,3 +84,13 @@ function createMarkup(array) {
 }
 
 gallery.insertAdjacentHTML('beforeend', createMarkup(images));
+
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
+console.log(SimpleLightbox);
+
+const lightbox = new SimpleLightbox('.gallery li a', {
+  captionsData: 'alt',
+  captionsDelay: 250,
+});
